@@ -12,6 +12,9 @@ function loadDoc(lat, lon) {
       document.getElementById("description").innerHTML = r.weather[0].description;
       document.getElementById("symbol").innerHTML = "&#8451";
     }
+    else{
+      console.log("Error", xmlhttp.statusText) 
+    }
   };
   weather.open("GET", "https://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&" + "lon=" + lon, true);
   weather.send();
